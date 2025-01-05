@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RBLX Game Launcher</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>RBLX Game Launcher</h1>
+    <p>Click the button below to launch the game:</p>
+
+    <!-- Кнопка запуска -->
+    <button class="button" id="launchButton">Launch Game</button>
+
+    <script>
+        // Обработчик нажатия кнопки
+        document.getElementById('launchButton').addEventListener('click', function () {
+            const filePath = './lol.rblx'; // Укажите имя вашего файла
+            const robloxProtocol = `roblox-player://launch?file=${location.origin}/${filePath}`;
+
+            // Открытие клиента Roblox
+            window.location.href = robloxProtocol;
+        });
+    </script>
+</body>
+</html>
